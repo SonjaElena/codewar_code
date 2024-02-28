@@ -356,3 +356,50 @@ function likeOrDislike(buttons) {
     return buttons[buttons.length - 1];
   }
 }
+
+// 7 kyu - Alphabet war
+function alphabetWar(fight) {
+  let leftside = [];
+  let rightside = [];
+
+  fight = fight.split("");
+
+  leftside = { w: 4, b: 3, p: 2, s: 1 };
+  rightside = { m: 4, q: 3, d: 2, z: 1 };
+
+  let leftoutput = 0;
+  let rightoutput = 0;
+
+  for (let i of fight) {
+    if (leftside[i]) {
+      leftoutput += leftside[i];
+    } else if (rightside[i]) {
+      rightoutput += rightside[i];
+    }
+  }
+
+  if (leftoutput > rightoutput) {
+    return "Left side wins!";
+  } else if (leftoutput < rightoutput) {
+    return "Right side wins!";
+  } else {
+    return "Let's fight again!";
+  }
+}
+
+// 7 kyu - Who is the killer?
+function killer(suspectInfo, dead) {
+  let suspects = Object.keys(suspectInfo);
+  let murderer = [];
+
+  for (let i in suspectInfo) {
+    let saw = suspectInfo[i];
+
+    let übereinst = dead.every((a) => saw.includes(a));
+
+    if (übereinst) {
+      murderer.push(i);
+    }
+  }
+  return murderer.join(", ");
+}
