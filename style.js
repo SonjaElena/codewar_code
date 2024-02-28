@@ -403,3 +403,5 @@ function killer(suspectInfo, dead) {
   }
   return murderer.join(", ");
 }
+
+// 6 kyu - Longest palindrome
