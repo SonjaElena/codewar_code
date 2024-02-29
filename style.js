@@ -438,3 +438,16 @@ function extractClassName(sessionTitle) {
     return null;
   }
 }
+
+// 7 kyu - List Filtering
+function filter_list(derinput) {
+  let derinputzahl = [];
+
+  derinput.forEach((element) => {
+    if (typeof element !== "string") {
+      derinputzahl.push(element);
+    }
+  });
+
+  return derinputzahl;
+}
